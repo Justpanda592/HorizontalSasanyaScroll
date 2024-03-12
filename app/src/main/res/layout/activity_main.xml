@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/coal"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="410dp"
+        android:layout_height="278dp"
+        android:foreground="@drawable/coffee_girl"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="times"
+        android:text="Акция"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#000"
+                android:foreground="@drawable/_066"
+                android:src="@drawable/sanyalybitradius"
+                android:text="Button 1"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#e71313"
+                android:foreground="@drawable/_060"
+                android:text="Button 2"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#14e634"
+                android:foreground="@drawable/_064"
+                android:text="Button 3"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#dc12ea"
+                android:foreground="@drawable/_544"
+                android:text="Button 4"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="#08e9b5"
+                android:foreground="@drawable/_061"
+                android:text="Button 5"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.google.android.material.tabs.TabLayout
+        style="@style/Widget.App.TabLayout"
+        android:layout_width="411dp"
+        android:layout_height="82dp"
+        android:background="@drawable/sanyalybitradius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="#FF9F12">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:icon="@drawable/home_icon_183924"></com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:foreground="@drawable/ocr__2_"
+            android:icon="@drawable/_f5a4"></com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:foreground="@drawable/ocr__3_"
+            android:icon="@drawable/quiet_time_icon"></com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:foreground="@drawable/ocr__1_"
+            android:icon="@drawable/bag_icon_184182"></com.google.android.material.tabs.TabItem>
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
