@@ -37,11 +37,12 @@
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_width="416dp"
+        android:layout_height="75dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,61 +51,101 @@
 
 
             <Button
+                android:id="@+id/btn_hor1"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="#000"
-                android:foreground="@drawable/_066"
-                android:src="@drawable/sanyalybitradius"
-                android:text="Button 1"
-                android:textColor="#FFF"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Эспрессо"
+                android:textColor="#777"
                 android:textStyle="bold"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="40dp" />
 
             <Button
+                android:id="@+id/btn_hor2"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="#e71313"
-                android:foreground="@drawable/_060"
-                android:text="Button 2"
-                android:textColor="#FFF"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Капучино"
+                android:textColor="#777"
                 android:textStyle="bold"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="40dp" />
 
             <Button
+                android:id="@+id/btn_hor3"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="#14e634"
-                android:foreground="@drawable/_064"
-                android:text="Button 3"
-                android:textColor="#FFF"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Американо"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
 
             <Button
+                android:id="@+id/btn_hor4"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="#dc12ea"
-                android:foreground="@drawable/_544"
-                android:text="Button 4"
-                android:textColor="#FFF"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Латте"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
 
             <Button
+                android:id="@+id/btn_hor5"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_margin="10dp"
-                android:backgroundTint="#08e9b5"
-                android:foreground="@drawable/_061"
-                android:text="Button 5"
-                android:textColor="#FFF"
-                android:textStyle="bold" />
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Какао"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Фраппучино"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Раф"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnWidth="150dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"></GridView>
+    </LinearLayout>
+
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         style="@style/Widget.App.TabLayout"
         android:layout_width="411dp"
         android:layout_height="82dp"
