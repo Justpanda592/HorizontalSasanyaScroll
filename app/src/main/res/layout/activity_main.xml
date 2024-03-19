@@ -6,14 +6,29 @@
     android:layout_height="match_parent"
     android:background="@color/coal"
     tools:context=".MainActivity">
-
+    <RelativeLayout
+        android:id="@+id/searchViewLayout"
+        android:layout_width="415dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView">
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-4dp"
+            android:background="#af90"
+            android:queryHint="Search coffee"
+            android:singleLine="true" />
+    </RelativeLayout>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="410dp"
-        android:layout_height="278dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="70dp"
         android:foreground="@drawable/coffee_girl"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/searchViewLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -66,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Капучино"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -76,6 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Американо"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -86,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Латте"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -96,6 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Какао"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -106,6 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Фраппучино"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -116,6 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
                 android:text="Раф"
                 android:textColor="#777"
                 android:textStyle="bold"
@@ -124,6 +145,7 @@
     </HorizontalScrollView>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="235dp"
         android:orientation="vertical"

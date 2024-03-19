@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF0000</color>
     <color name="white">#FFFFFF</color>
-    <color name="coal">#DDDDDD</color>
+    <color name="coal">#F4F4F4</color>
     <color name="activeColor">#FF9800</color>
     <color name="inactiveColor">#202020</color>
     <color name="btn_not">#FFFFFF</color>
