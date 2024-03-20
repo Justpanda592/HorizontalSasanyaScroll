@@ -15,7 +15,14 @@ public class CustomDialog extends Dialog {
         TextView textViewMessage = findViewById(R.id.text_view_message);
         ImageView image = findViewById(R.id.image);
         Button buttonOk = findViewById(R.id.btn_ok);
+        Button buttonBack = findViewById(R.id.btn_back);
         buttonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hide();
+            }
+        });
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hide();

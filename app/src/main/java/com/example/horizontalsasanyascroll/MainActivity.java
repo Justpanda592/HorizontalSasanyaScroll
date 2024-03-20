@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             "Какао — напиток, в состав которого обязательно входит размолотое какао, а также молоко и сахар. Напиток обычно безалкогольный.",
             "«Матча» Ла́тте — напиток на основе чая, сочетающий в себе порошок ярко-зеленого чая матча и молоко, чтобы создать молочный напиток как альтернатива кофе.",
             "Эспре́ссо тоник — прохладный освежающий напиток с терпким и пряным привкусом."};
+    boolean btn_hor1_act = false;
+    boolean btn_hor2_act = false;
+    boolean btn_hor3_act = false;
+    boolean btn_hor4_act = false;
+    boolean btn_hor5_act = false;
+    boolean btn_hor6_act = false;
+    boolean btn_hor7_act = false;
     List<ItemsModel> itemslist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(gridviewOnItemClickListener);
         SearchView searchView = (SearchView) findViewById(R.id.searchView);
         for(int i=0; i < coffee_name.length; i++){
-            ItemsModel itemsModel = new ItemsModel(coffee_name[i], coffeeThumbIds[i]);
+            ItemsModel itemsModel = new ItemsModel(coffee_name[i], coffeeCosts[i].toString(), coffeeThumbIds[i]);
             itemslist.add(itemsModel);
         }
         final Button btn_hor1 = findViewById(R.id.btn_hor1);
@@ -69,92 +76,183 @@ public class MainActivity extends AppCompatActivity {
         btn_hor1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor1.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor1_act){
+                    btn_hor1.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Эспрессо");
+                    btn_hor1_act = true;
+                }else{
+                    btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor1_act = false;
+                }
+                btn_hor2_act = false;
+                btn_hor3_act = false;
+                btn_hor4_act = false;
+                btn_hor5_act = false;
+                btn_hor6_act = false;
+                btn_hor7_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Эспрессо");
             }
         });
         btn_hor2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor2.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor2_act){
+                    btn_hor2.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Капучино");
+                    btn_hor2_act = true;
+                }else{
+                    btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor2_act = false;
+                }
+                btn_hor1_act = false;
+                btn_hor3_act = false;
+                btn_hor4_act = false;
+                btn_hor5_act = false;
+                btn_hor6_act = false;
+                btn_hor7_act = false;
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Капучино");
             }
         });
         btn_hor3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor3.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor3_act){
+                    btn_hor3.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Американо");
+                    btn_hor3_act = true;
+                }else{
+                    btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor3_act = false;
+                }
+                btn_hor1_act = false;
+                btn_hor2_act = false;
+                btn_hor4_act = false;
+                btn_hor5_act = false;
+                btn_hor6_act = false;
+                btn_hor7_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Американо");
             }
         });
         btn_hor4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor4.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor4_act){
+                    btn_hor4.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Латте");
+                    btn_hor4_act = true;
+                }else{
+                    btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor4_act = false;
+                }
+                btn_hor2_act = false;
+                btn_hor3_act = false;
+                btn_hor1_act = false;
+                btn_hor5_act = false;
+                btn_hor6_act = false;
+                btn_hor7_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Латте");
             }
         });
         btn_hor5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor5.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor5_act){
+                    btn_hor5.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Какао");
+                    btn_hor5_act = true;
+                }else{
+                    btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor5_act = false;
+                }
+                btn_hor2_act = false;
+                btn_hor3_act = false;
+                btn_hor4_act = false;
+                btn_hor1_act = false;
+                btn_hor6_act = false;
+                btn_hor7_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Какао");
             }
         });
         btn_hor6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor6.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor6_act){
+                    btn_hor6.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Фраппучино");
+                    btn_hor6_act = true;
+                }else{
+                    btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor6_act = false;
+                }
+                btn_hor2_act = false;
+                btn_hor3_act = false;
+                btn_hor4_act = false;
+                btn_hor5_act = false;
+                btn_hor1_act = false;
+                btn_hor7_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Фраппучино");
             }
         });
         btn_hor7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_hor7.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                if(!btn_hor7_act){
+                    btn_hor7.setBackgroundColor(getResources().getColor(R.color.activeColor));
+                    adapter.getFilter().filter("Раф");
+                    btn_hor7_act = true;
+                }else{
+                    btn_hor7.setBackgroundColor(getResources().getColor(R.color.btn_not));
+                    adapter.getFilter().filter("");
+                    btn_hor7_act = false;
+                }
+                btn_hor2_act = false;
+                btn_hor3_act = false;
+                btn_hor4_act = false;
+                btn_hor5_act = false;
+                btn_hor6_act = false;
+                btn_hor1_act = false;
                 btn_hor2.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor3.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor4.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor5.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor6.setBackgroundColor(getResources().getColor(R.color.btn_not));
                 btn_hor1.setBackgroundColor(getResources().getColor(R.color.btn_not));
-                adapter.getFilter().filter("Раф");
             }
         });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -214,7 +312,8 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null) {
                 holder = new ViewHolder();
                 convertView = View.inflate(mContext, R.layout.custom_grid, null);
-                holder.textView = (TextView) convertView.findViewById(R.id.text);
+                holder.txt_name = (TextView) convertView.findViewById(R.id.txt_name);
+                holder.txt_cost = (TextView) convertView.findViewById(R.id.txt_cost);
                 holder.imageView = (ImageView) convertView.findViewById(R.id.image);
                 holder.imageView.getLayoutParams().width = 325;
                 holder.imageView.getLayoutParams().height = 325;
@@ -225,13 +324,15 @@ public class MainActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeResource(this.mContext.getResources(), itemsModelListFiltered.get(position).getImage());
             Bitmap circularBitmap = ImageHelper.getRoundedCornerBitmap(bitmap, 400);
             holder.imageView.setImageBitmap(circularBitmap);
-            holder.textView.setText(itemsModelListFiltered.get(position).getName());
+            holder.txt_name.setText(itemsModelListFiltered.get(position).getName());
+            holder.txt_cost.setText(itemsModelListFiltered.get(position).getCost() + " р.");
             return convertView;
         }
 
         class ViewHolder {
             ImageView imageView;
-            TextView textView;
+            TextView txt_name;
+            TextView txt_cost;
         }
         @Override
         public Filter getFilter() {

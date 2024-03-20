@@ -1,64 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="375dp"
     android:layout_height="750dp"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:backgroundTint="@drawable/btn_hover_cancel"
+        android:textColor="#000"
+        android:text="^"
+        android:textSize="36dp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="4dp"
+        android:alpha="0.67"></Button>
 
     <TextView
         android:id="@+id/text_view_message"
-        android:layout_width="379dp"
-        android:layout_height="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
         android:text=""
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/image"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906"
-        tools:layout_editor_absoluteX="4dp"></TextView>
+        app:layout_constraintTop_toTopOf="@+id/btn_back"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="5dp"></TextView>
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="361dp"
-        android:layout_height="261dp"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/text_view_cost"
-        tools:layout_editor_absoluteX="7dp"></ImageView>
+        tools:layout_editor_absoluteX="5dp"></ImageView>
 
     <TextView
         android:id="@+id/text_view_cost"
-        android:layout_width="407dp"
-        android:layout_height="41dp"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
         android:text="Цена: "
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintBottom_toTopOf="@+id/text_view_ml"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.984"
+        app:layout_constraintVertical_bias="0.974"
         tools:layout_editor_absoluteX="6dp"></TextView>
 
     <TextView
         android:id="@+id/text_view_ml"
-        android:layout_width="375dp"
-        android:layout_height="41dp"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
         android:text=""
         android:textColor="#aaaaaa"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/text_view_desc"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        tools:layout_editor_absoluteX="8dp"></TextView>
+        app:layout_constraintVertical_bias="0.977"
+        tools:layout_editor_absoluteX="3dp"></TextView>
 
     <TextView
         android:id="@+id/text_view_desc"
-        android:layout_width="377dp"
-        android:layout_height="128dp"
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
         android:text=""
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_ok"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936"
-        tools:layout_editor_absoluteX="6dp"></TextView>
+        app:layout_constraintVertical_bias="0.964"
+        tools:layout_editor_absoluteX="3dp"></TextView>
 
     <Button
         android:id="@+id/btn_ok"
@@ -66,5 +80,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="650dp"
         android:layout_marginRight="0dp"
+        android:backgroundTint="#ff9800"
         android:text="Купить"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
