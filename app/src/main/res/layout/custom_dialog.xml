@@ -37,42 +37,69 @@
         android:layout_width="match_parent"
         android:layout_height="256dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_cost"
+        app:layout_constraintBottom_toTopOf="@+id/lLayout1"
         tools:layout_editor_absoluteX="5dp"></ImageView>
-
-    <TextView
-        android:id="@+id/text_view_cost"
+    <LinearLayout
+        android:id="@+id/lLayout1"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:text="Цена: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_ml"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974"
-        tools:layout_editor_absoluteX="6dp"></TextView>
-
-    <TextView
-        android:id="@+id/text_view_ml"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:text=""
-        android:textColor="#aaaaaa"
-        android:textSize="20dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toTopOf="@+id/text_view_desc"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977"
-        tools:layout_editor_absoluteX="3dp"></TextView>
+        app:layout_constraintVertical_bias="1"
+        tools:layout_editor_absoluteX="6dp">
+        <TextView
+            android:id="@+id/text_view_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Цена: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_ml"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
+            tools:layout_editor_absoluteX="6dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="/"
+            android:textColor="#000000"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20px"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_desc"
+            app:layout_constraintTop_toTopOf="@+id/text_view_cost"
+            app:layout_constraintVertical_bias="1"
+            android:layout_marginLeft="10px"
+            tools:layout_editor_absoluteX="3dp"></TextView>
+        <TextView
+            android:id="@+id/text_view_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text=""
+            android:textColor="#000000"
+            android:alpha="0.6"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="20px"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_desc"
+            app:layout_constraintTop_toTopOf="@+id/text_view_cost"
+            app:layout_constraintVertical_bias="1"
+            android:layout_marginLeft="10px"
+            tools:layout_editor_absoluteX="3dp"></TextView>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/text_view_desc"
         android:layout_width="match_parent"
-        android:layout_height="117dp"
+        android:layout_height="150dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textAlignment="center"
         android:text=""
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_ok"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964"
-        tools:layout_editor_absoluteX="3dp"></TextView>
+        app:layout_constraintVertical_bias="0.893"
+        tools:layout_editor_absoluteX="16dp"></TextView>
 
     <Button
         android:id="@+id/btn_ok"
@@ -81,5 +108,8 @@
         android:layout_marginTop="650dp"
         android:layout_marginRight="0dp"
         android:backgroundTint="#ff9800"
-        android:text="Купить"></Button>
+        android:text="В корзину"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         GridView gridview = (GridView) findViewById(R.id.gridView1);
         ImageAdapter adapter = new ImageAdapter(itemslist, this);
         gridview.setAdapter(adapter);
-        gridview.setOnItemClickListener(gridviewOnItemClickListener);
         SearchView searchView = (SearchView) findViewById(R.id.searchView);
         for(int i=0; i < coffee_name.length; i++){
             ItemsModel itemsModel = new ItemsModel(coffee_name[i], coffeeCosts[i].toString(), coffeeThumbIds[i]);
@@ -267,23 +266,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private GridView.OnItemClickListener gridviewOnItemClickListener = new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-            CustomDialog dialog = new CustomDialog(MainActivity.this);
-            dialog.show();
-            TextView textViewMessage = dialog.findViewById(R.id.text_view_message);
-            textViewMessage.setText(textViewMessage.getText() + coffee_name[position]);
-            TextView textViewCost = dialog.findViewById(R.id.text_view_cost);
-            textViewCost.setText(textViewCost.getText() + coffeeCosts[position].toString() + " р.");
-            TextView textViewMl = dialog.findViewById(R.id.text_view_ml);
-            textViewMl.setText(textViewMl.getText() + coffee_ml[position].toString() + "мл");
-            TextView textViewDesc = dialog.findViewById(R.id.text_view_desc);
-            textViewDesc.setText(textViewDesc.getText() + coffee_desc[position]);
-            ImageView image = dialog.findViewById(R.id.image);
-            image.setImageResource(coffeeThumbIds[position]);
-        }
-    };
     public class ImageAdapter extends BaseAdapter implements Filterable {
         private Context mContext;
         private List<ItemsModel> itemsModelList;
@@ -315,8 +297,32 @@ public class MainActivity extends AppCompatActivity {
                 holder.txt_name = (TextView) convertView.findViewById(R.id.txt_name);
                 holder.txt_cost = (TextView) convertView.findViewById(R.id.txt_cost);
                 holder.imageView = (ImageView) convertView.findViewById(R.id.image);
+                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CustomDialog dialog = new CustomDialog(MainActivity.this);
+                        dialog.show();
+                        TextView textViewMessage = dialog.findViewById(R.id.text_view_message);
+                        textViewMessage.setText(textViewMessage.getText() + coffee_name[position]);
+                        TextView textViewCost = dialog.findViewById(R.id.text_view_cost);
+                        textViewCost.setText(textViewCost.getText() + coffeeCosts[position].toString() + " р.");
+                        TextView textViewMl = dialog.findViewById(R.id.text_view_ml);
+                        textViewMl.setText(textViewMl.getText() + coffee_ml[position].toString() + "мл");
+                        TextView textViewDesc = dialog.findViewById(R.id.text_view_desc);
+                        textViewDesc.setText(textViewDesc.getText() + coffee_desc[position]);
+                        ImageView image = dialog.findViewById(R.id.image);
+                        image.setImageResource(coffeeThumbIds[position]);
+                    }
+                });
                 holder.imageView.getLayoutParams().width = 325;
                 holder.imageView.getLayoutParams().height = 325;
+                holder.btn_buy = (Button) convertView.findViewById(R.id.btn_buy);
+                holder.btn_buy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //покупка
+                    }
+                });
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -333,6 +339,7 @@ public class MainActivity extends AppCompatActivity {
             ImageView imageView;
             TextView txt_name;
             TextView txt_cost;
+            Button btn_buy;
         }
         @Override
         public Filter getFilter() {
