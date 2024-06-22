@@ -7,21 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 public class CustomDialog extends Dialog {
-    public CustomDialog(Context context){
+    public CustomDialog(Context context) {
         super(context);
         setContentView(R.layout.custom_dialog);
         TextView textViewMessage = findViewById(R.id.text_view_message);
         ImageView image = findViewById(R.id.image);
-        Button buttonOk = findViewById(R.id.btn_ok);
         Button buttonBack = findViewById(R.id.btn_back);
-        buttonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                hide();
-            }
-        });
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

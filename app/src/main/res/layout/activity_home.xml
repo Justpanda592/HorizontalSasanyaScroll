@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/coal"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/searchViewLayout"
+        android:layout_width="415dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        tools:ignore="MissingConstraints">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#af90"
+            android:queryHint="Search coffee"
+            android:singleLine="true"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-4dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="410dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="70dp"
+        android:foreground="@drawable/coffee_girl"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/searchViewLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="times"
+        android:text="Акция"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="408dp"
+        android:layout_height="57dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btn_hor1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Эспрессо"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Капучино"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Американо"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Латте"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Какао"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor6"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Фраппучино"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+
+            <Button
+                android:id="@+id/btn_hor7"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@drawable/btn_hor_click"
+                android:text="Раф"
+                android:textColor="#777"
+                android:textStyle="bold"
+                app:cornerRadius="40dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="150dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

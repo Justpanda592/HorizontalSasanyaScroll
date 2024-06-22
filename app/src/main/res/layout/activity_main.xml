@@ -6,169 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/coal"
     tools:context=".MainActivity">
-    <RelativeLayout
-        android:id="@+id/searchViewLayout"
-        android:layout_width="415dp"
-        android:layout_height="74dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView">
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="-4dp"
-            android:background="#af90"
-            android:queryHint="Search coffee"
-            android:singleLine="true" />
-    </RelativeLayout>
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="410dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="70dp"
-        android:foreground="@drawable/coffee_girl"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/searchViewLayout"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="times"
-        android:text="Акция"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="408dp"
-        android:layout_height="57dp"
-        android:fillViewport="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/btn_hor1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Эспрессо"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Капучино"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor3"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Американо"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Латте"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Какао"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor6"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Фраппучино"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-
-            <Button
-                android:id="@+id/btn_hor7"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:backgroundTint="@drawable/btn_hor_click"
-                android:text="Раф"
-                android:textColor="#777"
-                android:textStyle="bold"
-                app:cornerRadius="40dp" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/tabLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
-        <GridView
-            android:id="@+id/gridView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnWidth="150dp"
-            android:gravity="center"
-            android:horizontalSpacing="10dp"
-            android:numColumns="auto_fit"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp"></GridView>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -184,25 +28,25 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:icon="@drawable/home_icon_183924"></com.google.android.material.tabs.TabItem>
+            android:icon="@drawable/home_icon_183924"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:foreground="@drawable/ocr__2_"
-            android:icon="@drawable/_f5a4"></com.google.android.material.tabs.TabItem>
+            android:icon="@drawable/_f5a4"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:foreground="@drawable/ocr__3_"
-            android:icon="@drawable/quiet_time_icon"></com.google.android.material.tabs.TabItem>
+            android:icon="@drawable/quiet_time_icon"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:foreground="@drawable/ocr__1_"
-            android:icon="@drawable/bag_icon_184182"></com.google.android.material.tabs.TabItem>
+            android:icon="@drawable/bag_icon_184182"/>
     </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
